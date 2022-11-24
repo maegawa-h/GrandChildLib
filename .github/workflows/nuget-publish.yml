@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # slnファイルの存在するフォルダの相対パス
-      SolutionPath: src
+      SolutionPath: src/GrandChildLib
 
       # nupkgのビルド結果があるbinのパス
       # プロジェクトが複数ある場合はすべて登録すること
@@ -26,13 +26,13 @@ jobs:
           dotnet nuget add source "https://nuget.pkg.github.com/maegawa-h/index.json" -n github -u ${{ secrets.NUGET_GITHUB_USER }} -p ${{ secrets.NUGET_GITHUB_TOKEN }} --store-password-in-clear-text
 
       - name: Restore dependencies
-        run: dotnet restore ${SolutionPath}/GrandChildLib
+        run: dotnet restore ${SolutionPath}
 
       - name: Build
         run: dotnet build ${SolutionPath} --no-restore --configuration release
 
       - name: Pack
-        run: dotnet pack ${SolutionPath}  --configuration release
+        run: dotnet pack ${SolutionPath} --configuration release
 
       - name: Push
         run: |
