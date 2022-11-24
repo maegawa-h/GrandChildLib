@@ -5,7 +5,7 @@ on: [ workflow_dispatch ]
 # 環境にあわせて修正してください。
 env:
   # ソースファイルのあるフォルダ
-  SOURCE_FOLDER: src\GrandChildLib
+  SOURCE_FOLDER: src/GrandChildLib
 
 jobs:
   build:
