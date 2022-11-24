@@ -11,7 +11,7 @@ jobs:
 
       # nupkgのビルド結果があるbinのパス
       # プロジェクトが複数ある場合はすべて登録すること
-      NugetPackagePath: src/GrandChildLib/bin/Release
+      NugetPackagePath: src/GrandChildLib/GrandChildLib/bin/Release
 
     steps:
       - uses: actions/checkout@v2
