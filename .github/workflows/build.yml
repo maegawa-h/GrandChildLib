@@ -5,7 +5,7 @@ on: [ workflow_dispatch ]
 # 環境にあわせて修正してください。
 env:
   # ソースファイルのあるフォルダ
-  SOURCE_FOLDER: src
+  SOURCE_FOLDER: src\GrandChildLib
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
       run: dotnet nuget add source "https://nuget.pkg.github.com/maegawa-h/index.json" -n github -u ${{ secrets.NUGET_GITHUB_USER }} -p ${{ secrets.NUGET_GITHUB_TOKEN }} --store-password-in-clear-text
 
     - name: Restore dependencies
-      run: dotnet restore ${{env.SOURCE_FOLDER}}
+      run: dotnet restore
       working-directory: ${{env.SOURCE_FOLDER}}
 
     - name: Build
