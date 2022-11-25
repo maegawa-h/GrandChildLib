@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace GrandChildLib
 {
@@ -11,7 +12,7 @@ namespace GrandChildLib
 
         public void Call()
         {
-            
+            Console.WriteLine($"GrandChild.Call(){Assembly.GetExecutingAssembly().GetName().Version}");
         }
     }
 }
