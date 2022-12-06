@@ -48,5 +48,5 @@ jobs:
           
       - name: Release
         run: |
-          tag=$(git describe --tags --abbrev=0)
+          tag=`git describe --tags --abbrev=0`
           gh release create $tag -R https://github.com/maegawa-h/GrandChildLib
