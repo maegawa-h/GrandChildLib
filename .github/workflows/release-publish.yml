@@ -48,4 +48,5 @@ jobs:
           
       - name: Release
         run: |
-          gh release create v1.2.3 -R https://github.com/maegawa-h/GrandChildLib
+          tag=$(git describe --tags --abbrev=0)
+          gh release create $tag -R https://github.com/maegawa-h/GrandChildLib

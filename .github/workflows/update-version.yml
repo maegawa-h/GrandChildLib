@@ -85,3 +85,6 @@ jobs:
         git commit -m "Commit updated files"
         git push
 
+        git tag -a $newver
+        git push origin タグ名
+
