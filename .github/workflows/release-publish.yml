@@ -1,4 +1,4 @@
-name: publish to nuget
+name: release-publish
 on:
   workflow_dispatch:
   workflow_run:
@@ -23,6 +23,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        run: |
+          tag=`git describe --tags --abbrev=0`
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
@@ -49,5 +51,4 @@ jobs:
           
       - name: Release
         run: |
-          tag=`git describe --tags --abbrev=0`
           gh release create $tag -R https://github.com/maegawa-h/GrandChildLib
