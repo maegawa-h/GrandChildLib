@@ -23,6 +23,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
@@ -50,6 +52,5 @@ jobs:
           
       - name: Release
         run: |
-          pwd
-          git describe --tags --abbrev=0
-#          gh release create $tag -R https://github.com/maegawa-h/GrandChildLib
+          tag=`git describe --tags --abbrev=0`
+          gh release create $tag -R https://github.com/maegawa-h/GrandChildLib
