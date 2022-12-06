@@ -44,8 +44,9 @@ jobs:
 
       - name: Push
         run: |
-          cd ${NugetPackagePath}
+          push ${NugetPackagePath}
           dotnet nuget push *.nupkg --source github --api-key ${{ secrets.NUGET_GITHUB_TOKEN }} --skip-duplicate
+          pop
           
       - name: Release
         run: |
