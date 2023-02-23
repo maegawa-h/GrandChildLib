@@ -14,4 +14,4 @@ jobs:
       uses: Hedgehogs0808/UpdateCsprojectVersion@main
       with:
         github-token: test
-        target-dir: test
+        target-dir: .\src
