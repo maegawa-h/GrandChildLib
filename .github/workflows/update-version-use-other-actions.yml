@@ -8,10 +8,11 @@ jobs:
 
     steps:
     - name: Chackout Code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Check Release View
       uses: Hedgehogs0808/UpdateCsprojectVersion@main
       with:
-        github-token: test
-        target-dir: .\src
+        targetDir: .\src
+        isCommit: true
+        addTag: true
