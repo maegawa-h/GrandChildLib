@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>27.0.1</Version>
+    <Version>28.0.1</Version>
   </PropertyGroup>
 </Project>
